@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>K6 Summary Report</title>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <style>
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
+    }
+    .fail-block {
+      background-color: #F9DCDE;
+      color: #9b0909;
+    }
+    .success-block {
+      background-color: #D7EADA;
+      color: #283618;
+    }
+    .banner-danger {
+      background-color: #D94851;
+      color: white;
+    }
+    .banner-success {
+      background-color: #D7EADA;
+      color: #283618;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid bg-white my-5">
+      <div class="container px-0 mb-5">
+        <h1 class="display-2 text-primary text-dark text-center">K6 Summary Report</h1>
+        <p class="text-secondary text-center">Generated at 12/11/2025, 12:24:54 PM</p>
+      </div>
+
+      
+
+      
+      <div>
+        <div>
+          <button class="btn btn-lg fs-2 px-0 text-primary" style="box-shadow: none;" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
+            Checks
+          </button>
+          <p class="text-secondary">Asserts that don't halt the execution unless specified in the threshold.</p>
+        </div>
+        <div class="collapse show mt-4" id="collapseExample">
+          <table class="table table-hover table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">check</th>
+                <th scope="col">passes</th>
+                <th scope="col">fails</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              
+              <tr class="fail-block">
+                
+                <th scope="row" class="text-secondary">1</th>
+                <td>status is 200</td>
+                <td>0</td>
+                <td>949</td>
+              </tr>
+              
+            </tbody>
+          </table>
+          <p class="d-inline-block me-3 text-success">passes: 0</p>
+          <p class="d-inline-block me-3 text-danger">fails: 949</p>
+          <p class="d-inline-block text-info">pass rate: 0.00%</p>
+          
+          
+        </div>
+      </div>
+      
+
+      <div class="mt-3">
+        <div class="mb-4">
+          <button class="btn btn-lg fs-2 px-0 text-primary" style="box-shadow: none;" data-bs-toggle="collapse" data-bs-target="#collapseMetric"
+            aria-expanded="false" aria-controls="collapseMetric">
+            Metrics
+          </button>
+          <p class="text-secondary">Important aspect of metrics management in k6</p>
+        </div>
+        <div class="collapse show" id="collapseMetric">
+          
+          <div class="mb-5">
+            <h5>A metric that cumulatively sums added values.</h5>
+            <table class="table table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">name</th>
+                  <th scope="col">count</th>
+                  <th scope="col">rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">1</th>
+                  <td>data_received</td>
+                  <td>495936</td>
+                  <td>7981.186186899192</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">2</th>
+                  <td>data_sent</td>
+                  <td>143157</td>
+                  <td>2303.8510431949435</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">3</th>
+                  <td>http_reqs</td>
+                  <td>949</td>
+                  <td>15.272425658486847</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">4</th>
+                  <td>iterations</td>
+                  <td>949</td>
+                  <td>15.272425658486847</td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+          
+
+          
+          <div class="mb-5">
+            <h5>A metric that allows for calculating statistics on the added values (min, max, average and percentiles).</h5>
+            <table class="table table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">name</th>
+                  <th scope="col">avg</th>
+                  <th scope="col">max</th>
+                  <th scope="col">med</th>
+                  <th scope="col">min</th>
+                  <th scope="col">P(90)</th>
+                  <th scope="col">P(95)</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">1</th>
+                  <td>http_req_blocked</td>
+                  <td>18.23 ms</td>
+                  <td>745.78 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.00 ms</td>
+                  <td>191.86 ms</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">2</th>
+                  <td>http_req_connecting</td>
+                  <td>6.20 ms</td>
+                  <td>128.22 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.00 ms</td>
+                  <td>94.06 ms</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">3</th>
+                  <td>http_req_duration</td>
+                  <td>216.42 ms</td>
+                  <td>3124.21 ms</td>
+                  <td>73.10 ms</td>
+                  <td>16.13 ms</td>
+                  <td>610.89 ms</td>
+                  <td>950.60 ms</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">4</th>
+                  <td>http_req_receiving</td>
+                  <td>0.70 ms</td>
+                  <td>329.01 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.00 ms</td>
+                  <td>1.94 ms</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">5</th>
+                  <td>http_req_sending</td>
+                  <td>0.22 ms</td>
+                  <td>9.09 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.67 ms</td>
+                  <td>0.76 ms</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">6</th>
+                  <td>http_req_tls_handshaking</td>
+                  <td>10.40 ms</td>
+                  <td>578.67 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.00 ms</td>
+                  <td>0.00 ms</td>
+                  <td>68.14 ms</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">7</th>
+                  <td>http_req_waiting</td>
+                  <td>215.49 ms</td>
+                  <td>3124.21 ms</td>
+                  <td>71.58 ms</td>
+                  <td>15.78 ms</td>
+                  <td>610.76 ms</td>
+                  <td>919.61 ms</td>
+                </tr>
+                
+                
+                <tr>
+                
+                  <th scope="row" class="text-secondary">8</th>
+                  <td>iteration_duration</td>
+                  <td>3246.94 ms</td>
+                  <td>6139.92 ms</td>
+                  <td>3086.85 ms</td>
+                  <td>3021.09 ms</td>
+                  <td>3671.31 ms</td>
+                  <td>3956.83 ms</td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+          
+
+          
+            <div class="mb-5">
+              <h5>A metric that tracks the percentage of added values that are non-zero.</h5>
+              <table class="table table-hover table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                    <th scope="col">rate</th>
+                    <th scope="col">passes</th>
+                    <th scope="col">fails</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  
+                  <tr>
+                  
+                    <th scope="row" class="text-secondary">1</th>
+                    <td>http_req_failed</td>
+                    <td>1</td>
+                    <td>949</td>
+                    <td>0</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          
+
+          
+            <div>
+              <h5>A metric that stores the min, max and last values added to it.</h5>
+              <table class="table table-hover table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                    <th scope="col">max</th>
+                    <th scope="col">min</th>
+                    <th scope="col">value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  
+                  <tr>
+                  
+                    <th scope="row" class="text-secondary">1</th>
+                    <td>vus</td>
+                    <td>50</td>
+                    <td>6</td>
+                    <td>6</td>
+                  </tr>
+                  
+                  
+                  <tr>
+                  
+                    <th scope="row" class="text-secondary">2</th>
+                    <td>vus_max</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              
+            </div>
+          
+        </div>
+      </div>
+      <hr class="mt-5"/>
+      <footer class="text-secondary text-center">Powered by k6-html-reporter</footer>
+
+
+
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+
+</html>
