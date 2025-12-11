@@ -12,32 +12,35 @@ export const options = {
 const users = readCSV("../data/agents.csv");  // important path
 
 export default function () {
-    const user = users[__VU % users.length]; // each VU gets different user
 
-    //const user = users[0];   // only 1 agent
+    const user = users[(__VU - 1) % users.length];
 
-    console.log(`VU ${__VU} logging in with ${user.username}`);
+    console.log(`VU ${__VU} logging in with ${user.email}`);
 
-    const url = "https://tau.labs.dpdzero.com/login-with-password";
+    const url = "https://schrodinger.labs.dpdzero.com/api/token";
 
-    const payload = JSON.stringify({
-        email: user.username,
-        password: user.password,
-
+    // Form-urlencoded payload
+    const payload = `username=${encodeURIComponent(user.email.trim())}&password=${encodeURIComponent(user.password.trim())}`;
     
-    });
     const params = {
         headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",   // optional but recommended
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json",
         },
     };
 
-    const res = http.request("POST", url, payload, params);
+    const res = http.post(url, payload, params);
 
-    //console.log("Payload being sent:", payload);
-    //console.log("Status code returned:", res.status);
-    //console.log("Response body:", res.body);
+    console.log("Payload being sent:", payload);
+    console.log("Status code returned:", res.status);
+    console.log("Response body:", res.body);
+
+    // Extract token if login is successful
+    if (res.status === 200) {
+        const responseJson = res.json();
+        const token = responseJson.access_token;
+        console.log(`Token for ${user.email}: ${token}`);
+    }
 
     check(res, {
         "status is 200": (r) => r.status === 200,
@@ -48,6 +51,7 @@ export default function () {
 
 export function handleSummary(data) {
     return {
-        "summary.json": JSON.stringify(data),
+        "summary.json": JSON.stringify(data, null, 2),
     };
 }
+
