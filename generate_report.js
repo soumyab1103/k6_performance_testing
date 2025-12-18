@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7b3004f647d836c300f88fcea6cd937b9332ba3d
 // generate_report.js
 const reporter = require('k6-html-reporter');
 
