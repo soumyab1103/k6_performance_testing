@@ -3,7 +3,7 @@ const reporter = require('k6-html-reporter');
 
 try {
     reporter.generateSummaryReport({
-        jsonFile: './summary.json',
+        jsonFile: './summary_${Date.now()}.json',
         output: './report',
         title: 'k6 Load Test Report'
     });
