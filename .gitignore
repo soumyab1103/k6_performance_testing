@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# k6 outputs
+summary_${Date.now()}.json
+report/
+*.html
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
