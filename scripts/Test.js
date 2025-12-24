@@ -30,7 +30,7 @@ const users = readCSV("../data/agents.csv");
 export default function () {
     
   const user = users[(__VU - 1) % users.length];
-  const loginurl = "https://schrodinger.labs.dpdzero.com/api/token";
+  const loginurl = "https://tst.labs.dpdzero.com/api/token";
   const payload = `username=${encodeURIComponent(user.email.trim())}&password=${encodeURIComponent(user.password.trim())}`;
   const params = {
     headers: {
