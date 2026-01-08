@@ -6,25 +6,24 @@ export const options = {
   scenarios: {
     stress: {
       executor: "ramping-vus",
-      startVUs: 10,
+      startVUs: 5,
       stages: [
-        { duration: "10s", target: 10 },
-       /* { duration: "30s", target: 100 },
+        { duration: "30s", target: 50 },
+        { duration: "30s", target: 100 },
         { duration: "30s", target: 150 },
         { duration: "30s", target: 200 },
-        { duration: "30s", target: 250 },
-        { duration: "30s", target: 300 },
-        { duration: "30s", target: 310 },*/
+        { duration: "30s", target: 220 },
       ],
       gracefulRampDown: "30s",
     },
   },
+
+  
   thresholds: {
     checks: ["rate > 0.95"],
-    http_req_duration: ["p(95) < 50000"],
+    http_req_duration: ["p(95) < 30000"],
   },
 }
-
 const users = readCSV("../data/agents.csv");
 
 export default function () {
@@ -36,15 +35,23 @@ export default function () {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
+    timeout: "30s",
   };
   let res = http.post(loginurl, payload, params);
+
+  if(res.status==200){
+    const responseJson= res.json();
+    if (!responseJson.access_token) {
+    console.error("Token missing for user:", user.email);
+    }
+  }
 
   check(res, {
         "status is 200": (r) => r.status === 200,
     });
   sleep(1);
 }
-
+  
 export function handleSummary(data) {
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
 
